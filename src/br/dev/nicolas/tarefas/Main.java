@@ -6,7 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import br.dev.nicolas.tarefas.dao.FuncionarioDAO;
 import br.dev.nicolas.tarefas.model.Funcionario;
 import br.dev.nicolas.tarefas.model.Tarefa;
 
@@ -19,10 +22,48 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Tarefa t = new Tarefa("Pagar o fornecedor");
-		gravarArquivo();
-		lerArquivo();
-
+		List<String> frutas = new ArrayList<String>();
+		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+		List<Double> numeros = new ArrayList<>();
+		
+		frutas.add("maçã");
+		frutas.add("banana");
+		frutas.add("tomate");
+		frutas.add("mexerica");
+		
+		numeros.add(4.9);
+		numeros.add(10.13);
+		
+		Funcionario funcionario = new Funcionario();
+		funcionario.setCodigo(4);
+		funcionario.setNome("João Abóbora");
+		funcionario.setMatricula("25132914");
+		funcionario.setEmail("jo_abobora@gmail.com");
+		
+		Funcionario funcionario2 = new Funcionario();
+		funcionario.setCodigo(4);
+		funcionario.setNome("Luan Melancia");
+		funcionario.setMatricula("25132914");
+		funcionario.setEmail("luan_melancia@gmail.com");
+		
+		funcionarios.add(funcionario);
+		funcionarios.add(funcionario2);
+		
+		System.out.println(frutas);
+		System.out.println(funcionarios);
+		
+		for (Funcionario f : funcionarios) {
+			System.out.println(f.getNome() + " - " + f.getEmail() + " - " + f.getMatricula());
+		}
+			
+//		FuncionarioDAO dao = new FuncionarioDAO(funcionario);
+//		dao.gravar();
+//
+//			System.out.println(funcionario.toString());
+//		
+//		Tarefa t = new Tarefa("Pagar o fornecedor");
+//		Funcionario f = new Funcionario();
+//
 	}
 	
 	private static void gravarArquivo() {
