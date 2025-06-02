@@ -40,14 +40,10 @@ public class FuncionarioDAO {
 		
 		try {
 			BufferedReader br = ff.getBufferedReader();
-			br.readLine();
-			
-			String line = null;
-			line = br.readLine();
+			String line = br.readLine();
 			
 			do {
 				 line = br.readLine();
-				 System.out.println(line);
 				 
 				String[] funcionario = line != null ? line.split(",") : null;
 				Funcionario f = new Funcionario();

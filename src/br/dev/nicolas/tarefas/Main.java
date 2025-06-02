@@ -26,7 +26,7 @@ public class Main {
 		
 		new FrameListaFuncionario();
 
-//		new FrameFuncionario();
+		//new FrameFuncionario();
 		
 	}
 
