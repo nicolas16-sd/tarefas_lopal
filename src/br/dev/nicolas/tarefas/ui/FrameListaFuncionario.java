@@ -32,7 +32,7 @@ public class FrameListaFuncionario {
 
 	private void criarTela() {
 		JFrame tela = new JFrame();
-		tela.setTitle("Cadastro de funcionários");
+		tela.setTitle("Cadastro de funcionï¿½rios");
 		tela.setSize(600, 600);
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.setResizable(false);
@@ -41,14 +41,14 @@ public class FrameListaFuncionario {
 
 		Container painel = tela.getContentPane();
 
-		lblTitulo = new JLabel("Cadastro de funcionários");
+		lblTitulo = new JLabel("Cadastro de funcionï¿½rios");
 		lblTitulo.setBounds(10, 20, 500, 30);
 		lblTitulo.setFont(fontTitulo);
 
-		// Criação de tabelas
-		String[] colunas = { "Código", "Nome", "Email" };
+		// Criaï¿½ï¿½o de tabelas
+		String[] colunas = { "Cï¿½digo", "Nome", "Email" };
 		
-		//Obter lista de funcionários
+		//Obter lista de funcionï¿½rios
 		FuncionarioDAO dao = new FuncionarioDAO(null);
 		
 		List<Funcionario> funcionarios = dao.showEmployees();
@@ -79,7 +79,7 @@ public class FrameListaFuncionario {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new FrameFuncionario();
+				new FrameFuncionario(tela);
 			}
 		});
 

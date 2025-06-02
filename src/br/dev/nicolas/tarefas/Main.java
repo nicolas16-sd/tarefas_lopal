@@ -13,19 +13,22 @@ import br.dev.nicolas.tarefas.dao.FuncionarioDAO;
 import br.dev.nicolas.tarefas.model.Funcionario;
 import br.dev.nicolas.tarefas.model.Tarefa;
 import br.dev.nicolas.tarefas.ui.FrameFuncionario;
+import br.dev.nicolas.tarefas.ui.FrameInicial;
 import br.dev.nicolas.tarefas.ui.FrameListaFuncionario;
+import br.dev.nicolas.tarefas.ui.FrameTarefas;
 import br.dev.nicolas.tarefas.utils.Utils;
 
 public class Main {
 
-	// Determinando o caminho do arquivo que será lido
+	// Determinando o caminho do arquivo que serï¿½ lido
 	private static String path = "C:\\Users\\25132912\\Tarefas (Celso)\\tarefas.txt";
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		new FrameListaFuncionario();
-
+		//new FrameTarefas();
+		new FrameInicial();
+		//new FrameListaFuncionario();
 		//new FrameFuncionario();
 		
 	}
@@ -39,7 +42,7 @@ public class Main {
 			file = new FileWriter(path, true);
 			writer = new BufferedWriter(file);
 
-			writer.write("Essa é a última linha, por enquanto!!!!\n");
+			writer.write("Essa ï¿½ a ï¿½ltima linha, por enquanto!!!!\n");
 			writer.flush();
 
 		} catch (Exception erro) {
@@ -64,13 +67,13 @@ public class Main {
 			}
 
 		} catch (FileNotFoundException erro) {
-			System.out.println("Arquivo não encontrado!");
+			System.out.println("Arquivo nï¿½o encontrado!");
 			System.out.println(erro.getMessage());
 		} catch (IOException erro) {
-			System.out.println("Você não tem autorização para ler o arquivo.");
+			System.out.println("Vocï¿½ nï¿½o tem autorizaï¿½ï¿½o para ler o arquivo.");
 			System.out.println(erro.getMessage());
 		} catch (Exception erro) {
-			System.out.println("Erro genérico.");
+			System.out.println("Erro genï¿½rico.");
 			System.out.println(erro.getMessage());
 		}
 	}

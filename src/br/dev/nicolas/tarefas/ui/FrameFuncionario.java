@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.UUID;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -30,20 +31,21 @@ public class FrameFuncionario {
 	private JButton btnSalvar;
 	private JButton btnSair;
 	
-	public FrameFuncionario() {
-		criarTela();
+	public FrameFuncionario(JFrame telaLista) {
+		criarTela(telaLista);
 	}
 	
-	private void criarTela() {
-		JFrame tela = new JFrame();
+	private void criarTela(JFrame telaLista) {
+		JDialog tela = new JDialog(telaLista, "Cadastro", true);
 		tela.setLayout(null);
+		tela.setLocationRelativeTo(telaLista);
 		tela.setSize(400, 400);
 		tela.setResizable(false);
-		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		Container painel = tela.getContentPane();
 		
-		lblCodigo = new JLabel("Código: ");
+		lblCodigo = new JLabel("Cï¿½digo: ");
 		lblCodigo.setBounds(20, 20, 200, 30);
 		txtCodigo = new JTextField();
 		txtCodigo.setBounds(20, 50, 200, 30);
@@ -81,8 +83,8 @@ public class FrameFuncionario {
 		painel.add(btnSalvar);
 		painel.add(btnSair);
 		
-		//Adicionar os ouvintes de ação dos botões
-		//Botão Salvar
+		//Adicionar os ouvintes de aï¿½ï¿½o dos botï¿½es
+		//Botï¿½o Salvar
 		btnSalvar.addActionListener(new ActionListener() {
 			
 			@Override
@@ -105,20 +107,20 @@ public class FrameFuncionario {
 		
 		limparFormulario();
 		
-		//Botão Sair
+		//Botï¿½o Sair
 		btnSair.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			int resposta = JOptionPane.showConfirmDialog(
 						tela, 
-						"Confirmar a saída do sistema?",
+						"Confirmar a saï¿½da do sistema?",
 						"Sair do Sistema", 
 						JOptionPane.YES_NO_OPTION
 						);
 			System.out.println(resposta);
 				if (resposta == 0) {
-					System.exit(0);
+					tela.dispose();
 				}
 				
 			}
