@@ -32,8 +32,8 @@ public class FrameListaFuncionario {
 
 	private void criarTela() {
 		JFrame tela = new JFrame();
-		tela.setTitle("Cadastro de funcion�rios");
-		tela.setSize(600, 600);
+		tela.setTitle("Cadastro de funcionários");
+		tela.setSize(530, 480);
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.setResizable(false);
 		tela.setLayout(null);
@@ -41,12 +41,12 @@ public class FrameListaFuncionario {
 
 		Container painel = tela.getContentPane();
 
-		lblTitulo = new JLabel("Cadastro de funcion�rios");
+		lblTitulo = new JLabel("Cadastro de funcionários");
 		lblTitulo.setBounds(10, 20, 500, 30);
 		lblTitulo.setFont(fontTitulo);
 
 		// Cria��o de tabelas
-		String[] colunas = { "C�digo", "Nome", "Email" };
+		String[] colunas = { "Código", "Nome", "Email" };
 		
 		//Obter lista de funcion�rios
 		FuncionarioDAO dao = new FuncionarioDAO(null);

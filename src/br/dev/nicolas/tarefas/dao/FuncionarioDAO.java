@@ -9,12 +9,12 @@ import java.util.List;
 import br.dev.nicolas.tarefas.factory.FileFactory;
 import br.dev.nicolas.tarefas.model.Funcionario;
 
-public class FuncionarioDAO {
+public class FuncionarioDAO<Tarefas> {
 
 	private Funcionario funcionario;
 	private FileFactory ff = new FileFactory();
 
-	// Método construtor
+	// Mï¿½todo construtor
 	public FuncionarioDAO(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
@@ -24,7 +24,7 @@ public class FuncionarioDAO {
 	
 		try {
 
-			BufferedWriter bw = ff.getBufferedWriter();
+			BufferedWriter bw = ff.getBufferedWriter("C:\\Users\\25132912\\Tarefas (Celso)\\funcionarios.csv");
 			bw.write(funcionario.toString());
 			bw.flush();
 
@@ -39,7 +39,7 @@ public class FuncionarioDAO {
 		List<Funcionario> funcionarios = new ArrayList<>();
 		
 		try {
-			BufferedReader br = ff.getBufferedReader();
+			BufferedReader br = ff.getBufferedReader("C:\\Users\\25132912\\Tarefas (Celso)\\funcionarios.csv");
 			String line = br.readLine();
 			
 			do {
@@ -49,18 +49,11 @@ public class FuncionarioDAO {
 				Funcionario f = new Funcionario();
 				f.setCodigo(funcionario[0]);
 				f.setNome(funcionario[1]);
-				f.setTelefone(funcionario[2]);
-				f.setEmail(funcionario[3]);
+				f.setEmail(funcionario[2]);
 				
 				funcionarios.add(f);
 				 
 			} while (line != null);
-			
-
-//			
-//			
-//			
-//			System.out.println(funcionario);
 			
 		} catch (Exception e) {
 			
@@ -68,5 +61,7 @@ public class FuncionarioDAO {
 		
 		return funcionarios;
 	}
+	
+
 
 }

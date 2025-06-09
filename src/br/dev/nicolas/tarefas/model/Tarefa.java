@@ -4,30 +4,34 @@ import java.time.LocalDateTime;
 
 public class Tarefa {
 
-	private int codigo;
+	private String codigo;
 	private String titulo;
 	private String descricao;
 	private LocalDateTime dataInical;
 	private LocalDateTime prazo;
 	private LocalDateTime dataConclusao;
 	private Status status;
-	private Funcionario responsavel;
+	private String responsavel;
 	
-	//Métodos construtores
+	//Mï¿½todos construtores
 	public Tarefa(String titulo) {
 		this.titulo = titulo;
+	}
+	
+	public Tarefa() {
+		
 	}
 	
 	public Tarefa(String titulo, LocalDateTime dataInicial) {
 		
 	}
 
-	//Métodos de Acesso
+	//Mï¿½todos de Acesso
 	public String getTitulo() {
 		return titulo;
 	}
 
-	public void setTitulo(String titulo) {
+	public void setNome(String titulo) {
 		this.titulo = titulo;
 	}
 
@@ -62,21 +66,31 @@ public class Tarefa {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-
-	public Funcionario getResponsavel() {
+	
+	public String getResponsavel() {
 		return responsavel;
 	}
 
-	public void setResponsavel(Funcionario responsavel) {
-		this.responsavel = responsavel;
+	public void setResponsavel(Funcionario funcionario) {
+		this.responsavel = funcionario;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public LocalDateTime getDataConclusao() {
 		return dataConclusao;
 	}
 
+	@Override
+	public String toString() {
+		return this.codigo + "," + this.titulo + "," + this.descricao + "\n";
+	}
+
+	
 }

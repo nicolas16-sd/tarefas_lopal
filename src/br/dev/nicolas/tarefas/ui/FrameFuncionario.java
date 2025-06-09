@@ -93,7 +93,7 @@ public class FrameFuncionario {
 				funcionario.setCodigo(Utils.gerarUUID());
 				funcionario.setNome(txtNome.getText());
 				funcionario.setTelefone(txtTelefone.getText());
-				funcionario.setTelefone(txtEmail.getText());
+				funcionario.setEmail(txtEmail.getText());
 				
 				FuncionarioDAO dao = new FuncionarioDAO(funcionario);
 				dao.gravar();

@@ -57,7 +57,7 @@ public class FrameInicial {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new FrameTarefas();
+				new FrameListaTarefas();
 			}
 		});
 		

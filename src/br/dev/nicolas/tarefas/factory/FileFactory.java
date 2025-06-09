@@ -16,15 +16,14 @@ public class FileFactory {
 	
 	private String pathFuncionarios = "C:\\Users\\25132912\\Tarefas (Celso)\\funcionarios.csv";
 	
-	public BufferedReader getBufferedReader() throws FileNotFoundException, IOException {
-		fr = new FileReader(pathFuncionarios);
+	public BufferedReader getBufferedReader(String path) throws FileNotFoundException, IOException {
+		fr = new FileReader(path);
 		br = new BufferedReader(fr);
 		return br;
 	}
 	
-	public BufferedWriter getBufferedWriter() throws FileNotFoundException, IOException {
-		
-			fw = new FileWriter(pathFuncionarios, true);
+	public BufferedWriter getBufferedWriter(String path) throws FileNotFoundException, IOException {
+			fw = new FileWriter(path, true);
 			bw = new BufferedWriter(fw);
 			
 			return bw;
